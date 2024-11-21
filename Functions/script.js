@@ -300,3 +300,142 @@ const userIdGeneratedByUser = () => {
 }
 console.log(userIdGeneratedByUser())
 */
+
+
+
+
+
+// Calculate marks of different subjects and then grade them by taking avarage.
+/*
+const calculateMarks = () => {
+  let chemistry = parseInt(prompt("Enter Chemistry Marks:"))
+  let physics = parseInt(prompt("Enter physics Marks:"))
+  let biology = parseInt(prompt("Enter biology Marks:"))
+  let maths = parseInt(prompt("Enter maths Marks:"))
+  totalMarks = biology + chemistry + physics + maths;
+  totalPercentage = (totalMarks / 400) * 100
+  console.log(totalPercentage)
+
+  if (totalPercentage > 100) {
+    return "You have entered wrong subject numbers."
+  } else if (totalPercentage >= 90) {
+    return "Grade A"
+  } else if (totalPercentage >= 80) {
+    return "Grade B"
+  } else if (totalPercentage >= 60){
+    return "Grade D"
+  } else if (totalPercentage >= 40) {
+    return "Grade E"
+  } else {
+    return "Fail"
+  }
+
+}
+
+console.log(calculateMarks());
+*/
+
+
+
+
+// Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+/*
+const modifyArr = (arr) => {
+    if ( arr.length >= 5) {
+      arr[4] = arr[4].toUpperCase()
+      return arr
+    } else {
+      return "length is smaller."
+    }
+
+}
+
+console.log(modifyArr(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot','Abdullah']))
+*/
+
+
+
+
+// Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+/*
+const average = (arr) => {
+
+   // Check if all items in the array are numbers
+   if (!arr.every(item => typeof item === 'number')) {
+    return 'Array contains non-number items.';
+}
+
+// Check if the array is empty
+if (arr.length === 0) {
+    return 'Array is empty, cannot calculate average.';
+}
+
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    
+  }
+  return sum / arr.length;
+}
+
+console.log(average([1,2,3,4,5,7,2,6,3]))
+*/
+
+
+
+
+// Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+/*
+const sumArray = (arr) => {
+
+  if (arr.some(value => typeof value !== 'number')) {
+    return "Array include another type" ;
+  }
+
+
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum
+} 
+console.log(sumArray([1,2,3,4,5,7,2,6,3]))
+*/
+
+
+
+
+// Write a functions which checks if all items are unique in the array.
+/*
+const unique = (arr) => {
+    // Convert the array to a Set, which automatically removes duplicates
+    const uniqueItems = new Set(arr);
+    return uniqueItems.size === arr.length; // If sizes match, all items are unique
+};
+
+// Test cases
+console.log(unique([1, 2, 3, 4, 5])); // Output: true (all items are unique)
+console.log(unique([1, 2, 2, 4, 5])); // Output: false (2 is repeated)
+*/
+
+
+
+
+// Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+/*
+const generateRandomNumber = () => {
+  let numbers = [];
+  for (let i = 0; numbers.length < 7 ; i++) {
+    const randomNumber = Math.floor(Math.random() * 10);
+
+  // Only add the random number if it's not already in the array.
+  if (!numbers.includes(randomNumber)) {
+    numbers.push(randomNumber)
+  }
+  }
+  return numbers;
+}
+
+let randomNumbers = generateRandomNumber()
+console.log(randomNumbers)
+*/
