@@ -439,3 +439,24 @@ const generateRandomNumber = () => {
 let randomNumbers = generateRandomNumber()
 console.log(randomNumbers)
 */
+
+
+
+// A fuction that performs the .filter() alike function.
+/*
+const filter = function(arr, fn) {
+  let fil = [];
+  for (let i = 0; i < arr.length; i++) {
+      if (fn(arr[i])) {
+          fil.push(arr[i]);
+      }
+  }
+  return fil;
+};
+
+const arr = [1, 2, 3, 4, 5];
+const fn = (value) => value > 2 ; // Filtering even numbers
+
+const result = filter(arr, fn);
+console.log(result); // Output: [2, 4]
+*/
