@@ -68,3 +68,119 @@ console.log(validPrices);
 let sumPrices = products.filter(product => typeof product.price === 'number' && product.price > 0).map(product => product.price).reduce((arr,curr) => arr + curr,0)
 console.log(sumPrices);
 */
+
+
+
+
+
+
+
+
+
+// Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create an object called statistics and create all the functions which do statistical calculations as method for the statistics object. Check the output below.
+/* 
+  const statistics = {
+    data: [],
+  
+    // Method to set data
+    setData(sample) {
+      this.data = sample;
+    },
+  
+    // Count of data points
+    count() {
+      return this.data.length;
+    },
+  
+    // Minimum value
+    min() {
+      return Math.min(...this.data);
+    },
+  
+    // Maximum value
+    max() {
+      return Math.max(...this.data);
+    },
+  
+    // Range
+    range() {
+      return this.max() - this.min();
+    },
+  
+    // Mean (Average)
+    mean() {
+      return this.data.reduce((sum, value) => sum + value, 0) / this.count();
+    },
+  
+    // Median
+    median() {
+      const sorted = [...this.data].sort((a, b) => a - b);
+      const mid = Math.floor(sorted.length / 2);
+      return sorted.length % 2 === 0
+        ? (sorted[mid - 1] + sorted[mid]) / 2
+        : sorted[mid];
+    },
+  
+    // Mode
+    mode() {
+      const frequency = {};
+      this.data.forEach(value => {
+        frequency[value] = (frequency[value] || 0) + 1;
+      });
+  
+      const maxFreq = Math.max(...Object.values(frequency));
+      const modes = Object.keys(frequency)
+        .filter(key => frequency[key] === maxFreq)
+        .map(Number);
+  
+      return { mode: modes, frequency: maxFreq };
+    },
+  
+    // Variance
+    variance() {
+      const mean = this.mean();
+      return (
+        this.data.reduce((sum, value) => sum + (value - mean) ** 2, 0) /
+        this.count()
+      );
+    },
+  
+    // Standard Deviation
+    stdDev() {
+      return Math.sqrt(this.variance());
+    },
+  
+    // Percentile
+    percentile(percentile) {
+      const sorted = [...this.data].sort((a, b) => a - b);
+      const index = Math.ceil((percentile / 100) * sorted.length) - 1;
+      return sorted[index];
+    },
+  
+    // Frequency Distribution
+    frequencyDistribution() {
+      const frequency = {};
+      this.data.forEach(value => {
+        frequency[value] = (frequency[value] || 0) + 1;
+      });
+  
+      return Object.entries(frequency)
+        .map(([value, count]) => ({ value: Number(value), frequency: count }))
+        .sort((a, b) => b.frequency - a.frequency);
+    },
+  };
+  
+  // Example Usage:
+statistics.setData([10, 20, 20, 30, 40, 50, 60, 10, 70, 20, 80, 90]);
+  console.log('Count:', statistics.count());
+  console.log('Min:', statistics.min());
+  console.log('Max:', statistics.max());
+  console.log('Range:', statistics.range());
+  console.log('Mean:', statistics.mean());
+  console.log('Median:', statistics.median());
+  console.log('Mode:', statistics.mode());
+  console.log('Variance:', statistics.variance());
+  console.log('Standard Deviation:', statistics.stdDev());
+  console.log('25th Percentile:', statistics.percentile(25));
+  console.log('Frequency Distribution:', statistics.frequencyDistribution());
+ */
