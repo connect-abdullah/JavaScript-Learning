@@ -228,3 +228,111 @@ console.log(width,height,area,perimeter);
  */
 
 
+
+
+
+
+// Level 2 Exercises
+
+/* 
+const users = [
+  {
+    name:'Brook',
+    scores:75,
+    skills:['HTML', 'CSS', 'JS'],
+    age:16
+  },
+  {
+    name:'Alex',
+    scores:80,
+    skills:['HTML', 'CSS', 'JS'],
+    age:18
+  },
+  {
+    name:'David',
+    scores:75,
+    skills:['HTML', 'CSS'],
+    age:22
+  },
+  {
+    name:'John',
+    scores:85,
+    skills:['HTML'],
+    age:25
+  },
+  {
+    name:'Sara',
+    scores:95,
+    skills:['HTML', 'CSS', 'JS'],
+    age: 26
+  },
+  {
+    name:'Martha',
+    scores:80,
+    skills:['HTML', 'CSS', 'JS'],
+    age:18
+  },
+  {
+    name:'Thomas',
+    scores:90,
+    skills:['HTML', 'CSS', 'JS'],
+    age:20
+  }
+  ]
+ */
+
+// 1 - Iterate through the users array and get all the keys of the object using destructuring
+/* 
+  for (const { name, scores, skills, age } of users) {
+    console.log(name, scores, skills, age);
+  }
+   */
+
+// 2 - Find the persons who have less than two skills
+/* 
+  for (const { name, scores, skills, age } of users) {
+    if (skills.length < 2) {
+      console.log(name, "has less than two skills");
+    }
+  }
+  */
+
+// Level 3 Exercises
+
+// 1 - A junior developer structure student name, skills and score in array of arrays which may not easy to read. Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.
+/* 
+const student = ['David', ['HTML', 'CSS', 'JS', 'React'], [98, 85, 90, 95]];
+
+let [studentName, skills, [htmlScore, cssScore, jsScore, reactScore]] = student;
+console.log(studentName, skills, jsScore, reactScore);
+ */
+
+
+
+
+
+// 2 - Write a function called convertArrayToObject which can convert the array to a structure object.
+/* 
+const students = [
+  ["David", ["HTML", "CSS", "JS", "React"], [98, 85, 90, 95]],
+  ["John", ["HTML", "CSS", "JS", "React"], [85, 80, 85, 80]],
+];
+
+const convertArrayToObject = (obj) => {
+  for (const [user, skills, [htmlScore,cssScore,jsScore,reactScore]] of obj) {
+    let object = {
+      Name: user,
+      skills: skills,
+      scores: { 
+       htmlScore : htmlScore,
+       cssScore : cssScore,
+       jsScore : jsScore,
+       reactScore : reactScore
+    }
+    };
+    console.log(object);
+  }
+};
+
+convertArrayToObject(students);
+ */
